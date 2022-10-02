@@ -1,8 +1,8 @@
 # Squads
 
----
-
 ### Introduction
+
+---
 
 Squads is a Maven-based web-app that allows for individuals to create groups (or “squads”) and communicate ideas together in one fluid chat. 
 
