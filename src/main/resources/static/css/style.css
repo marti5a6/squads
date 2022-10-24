@@ -1,7 +1,5 @@
 * {
-	color: white;
-	background-color: #333333;
-	margin: 5%;
+	max-width: 100%;
 }
 
 html {
@@ -9,14 +7,59 @@ html {
 	background-color: #333333;
 }
 
-body {
+#logo {
+	margin: 0;
+	padding: 0;
+}
+
+#logo a {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#fixedtop {
+    margin: 0%;
+    padding: 0%;
+    background-color: #eee;
+    border-bottom: 2px solid white;
+    color: black;
+    background-color: #eee;
+}
+
+#navigation {
+    max-width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    background-color: #eee;
+}
+
+#navbarSupportedContent {
+    justify-content: right;
+    color: black;
+    background-color: #eee;
+}
+
+@media screen and (max-width: 767px) {
+    #navbarSupportedContent {
+        margin-top: 5%;
+    }
+}
+
+#bodyContent {
 	color: white;
 	background-color: #333333;
+	margin-top: 100px;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 #jumbo {
-	display: table;
 	margin: auto;
+	padding: 0;
 }
 
 #title-text {
@@ -28,4 +71,9 @@ body {
 
 #break {
 	height: 20px;
+}
+
+#welcome {
+	margin: 0;
+	padding: 0;
 }
