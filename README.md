@@ -62,7 +62,9 @@ https://github.com/marti5a6/squads/projects
 ---
 
 Product Owner: Tony Martin
+
 Scrum Master: Tyler Malovrh
+
 Development Team Members: Hilbert Perez & Tigran Klekchyan
 
 
