@@ -13,4 +13,9 @@ public class SquadsController {
 	public String index() {
 		return "index";
 	}
+	
+	@RequestMapping("/settings")
+	public String settings() {
+		return "settings";
+	}
 }

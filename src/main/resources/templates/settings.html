@@ -20,7 +20,7 @@
 		<!--  Site Navigation -->
         <nav class="navbar navbar-top navbar-expand-lg navbar-dark fixed-top" id="fixedtop">
             <div class="container" id="navigation">
-            	<p id="logo"><a class="navbar-brand" href="#">Squads</a></p>
+            	<p id="logo"><a class="navbar-brand" href="/">Squads</a></p>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,10 +29,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">home</a>
+                            <a class="nav-link" href="/">home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="settings">settings</a>
+                            <a class="nav-link active" href="#">settings</a>
                         </li>
                     </ul>
                 </div>
@@ -43,7 +43,7 @@
 			<!--  Header -->
 			<!--/* displayed if account IS NOT null, indicating that the user IS logged in */-->
 			<div th:if="${#authorization.expression('isAuthenticated()')}" class="jumbotron-fluid" id="jumbo">
-				<h1 th:inline="text" class="display-1" id="title-text">Welcome, <span id="welcome" th:text="${#authentication.name}"></span>!</h1>
+				<h1 th:inline="text" class="display-1" id="title-text"><span id="welcome" th:text="${#authentication.name}"></span> Settings</h1>
 			</div>
 			
 			<!-- Page Spacing -->
