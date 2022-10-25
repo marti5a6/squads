@@ -1,8 +1,7 @@
 # Squads
 
-### Introduction
 
----
+### Introduction
 
 Squads is a Maven-based web-app that allows for individuals to create groups (or “squads”) and communicate ideas together in one fluid chat. 
 
@@ -12,17 +11,30 @@ Direct messaging will also be possible, as well as potentially profile customiza
 
 Support for image/file-sharing is also a planned endeavor. 
 
+---
+
+
+### Notes for Debugging
+
+Login information can be found in the [WebSecurityConfig.java](https://github.com/marti5a6/squads/blob/main/src/main/java/com/squads/WebSecurityConfig.java) file. Currently our debug users are hardcoded in-memory, although we plan to persist this data to and from a database once our MySQL database is setup.
+
+For simple reference, you can login with the username: 
+> user1
+
+And the password: 
+> user1Pass
+
+---
+
 
 ### Storyboard
 
----
-
 ![image](https://user-images.githubusercontent.com/60075541/197642378-e2e00a3c-4d96-48c7-9c70-f66df58651c5.png)
+
+---
 
 
 ### Functional Requirements
-
----
 
 As a user, I want to have a login, So that my account is unique.
 - Given user connects to Squads, When user adds unique login information, Then user is logged in.
@@ -42,24 +54,24 @@ As a user, I want a search bar, So that I can sort messages easily.
 As a user, I want navigation, So that I can find squads.
 - Given user is logged in, When user expands navigation, Then all squads are displayed.
 
+---
+
 
 ### Class Diagram
 
----
-
 ![image](https://user-images.githubusercontent.com/60075541/197643076-0f0163bf-2faf-4443-83b7-39a8fefa7c48.png)
+
+---
 
 
 ### Scrum Board
 
----
-
 https://github.com/marti5a6/squads/projects
+
+---
 
 
 ### Scrum Roles
-
----
 
 Product Owner: Tony Martin
 
@@ -67,9 +79,9 @@ Scrum Master: Tyler Malovrh
 
 Development Team Members: Hilbert Perez & Tigran Klekchyan
 
+---
+
 
 ### GitHub Project Link
-
----
 
 https://github.com/marti5a6/squads 
