@@ -2,9 +2,10 @@
 	max-width: 100%;
 }
 
-html {
+html, body {
 	color: white;
 	background-color: #333333;
+	height: 100;
 }
 
 #fixedtop {
@@ -80,4 +81,53 @@ html {
 	border: 2px solid white;
 	border-radius: 15px;
 	padding: 25px;
+}
+
+#logOut {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#loginForm { 
+	max-width: 500px;
+	padding-top: 25vh;
+	color: black;
+}
+
+#loginForm h2 {
+	color: white;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#buttonOne {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+#username {
+  	margin-bottom: -1px;
+  	border-bottom-right-radius: 0;
+  	border-bottom-left-radius: 0;
+}
+
+#password {
+	margin-bottom: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+#passwordOne {
+	margin-bottom: -1px;
+	border-radius: 0;
+}
+
+#confirmPassword {
+	margin-bottom: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
