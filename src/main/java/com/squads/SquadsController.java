@@ -1,4 +1,4 @@
-package com.marti5a6.squads;
+package com.squads;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SquadsController {
 	@Autowired
 	
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@RequestMapping("/register")
+	public String register() {
+		return "register";
+	}
+	
 	@RequestMapping("/")
 	public String index() {
 		return "index";
@@ -18,4 +28,10 @@ public class SquadsController {
 	public String settings() {
 		return "settings";
 	}
+	
+	@RequestMapping("/logout")
+	public String logout() {
+		return "logout";
+	}
+	
 }

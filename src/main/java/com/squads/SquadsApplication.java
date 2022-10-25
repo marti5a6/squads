@@ -1,4 +1,4 @@
-package com.marti5a6.squads;
+package com.squads;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
