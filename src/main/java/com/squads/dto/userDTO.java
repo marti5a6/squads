@@ -21,7 +21,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
-public class userDTO {
+public class UserDTO {
 	// Declare Variables
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -46,5 +46,5 @@ public class userDTO {
 
 	@ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<roleDTO> roles;
+    private Set<RoleDTO> roles;
 }
