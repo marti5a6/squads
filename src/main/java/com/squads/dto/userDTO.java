@@ -1,48 +1,50 @@
 package com.squads.dto;
 
+// Javax Persistence
+import javax.persistence.*;
+
+// Lombok Utils
+import lombok.Builder;
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+// Validation
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Length;
+import java.util.Set;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "users")
 public class userDTO {
 	// Declare Variables
-    private String username;
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
+    private int id;
+	
+    @Column(name = "user_name")
+    @Length(min = 5, message = "*Your user name must have at least 5 characters")
+    @NotEmpty(message = "*Please provide a user name")
+    private String userName;
     
+
+    @Column(name = "email")
+    @Email(message = "*Please provide a valid Email")
+    @NotEmpty(message = "*Please provide an email")
     private String email;
 
+    @Column(name = "password")
+    @Length(min = 5, message = "*Your password must have at least 5 characters")
+    @NotEmpty(message = "*Please provide your password")
     private String password;
-    private String matchingPassword;
-    
-    
-    // Getters and Setters
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getMatchingPassword() {
-		return matchingPassword;
-	}
-	public void setMatchingPassword(String matchingPassword) {
-		this.matchingPassword = matchingPassword;
-	}
-	
-	
-	// toString method
-	@Override
-	public String toString() {
-		return "userDTO [username=" + username + ", email=" + email + ", password=" + password + ", matchingPassword="
-				+ matchingPassword + "]";
-	}
+
+	@ManyToMany(cascade = CascadeType.MERGE)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<roleDTO> roles;
 }
