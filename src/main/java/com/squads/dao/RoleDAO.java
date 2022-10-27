@@ -1,10 +1,10 @@
-package com.squads.dao;
+// package com.squads.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import com.squads.dto.RoleDTO;
+// import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.stereotype.Repository;
+// import com.squads.dto.RoleDTO;
 
-@Repository
-public interface RoleDAO extends JpaRepository<RoleDTO, Integer> {
-    RoleDTO findByRole(String role);
-}
+// @Repository
+// public interface RoleDAO extends JpaRepository<RoleDTO, Integer> {
+//     RoleDTO findByRole(String role);
+// }
