@@ -57,6 +57,11 @@ html, body {
 	padding-right: 5%;
 }
 
+#enterText {
+	color: white;
+	background-color: #333333;
+}
+
 #jumbo {
 	margin: auto;
 	padding: 0;
