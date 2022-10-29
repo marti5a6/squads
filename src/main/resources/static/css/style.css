@@ -16,7 +16,7 @@ html, body {
     border-bottom: 2px solid white;
 }
 
-#navigation {
+#navigation, footer {
     max-width: 100%;
     padding-left: 5%;
     padding-right: 5%;
@@ -60,6 +60,7 @@ html, body {
 #enterText {
 	color: white;
 	background-color: #333333;
+	padding-bottom: 20px;
 }
 
 #jumbo {
