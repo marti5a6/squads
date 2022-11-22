@@ -36,10 +36,6 @@ public class SquadsController {
 	
 	@RequestMapping("/")
 	public String index() {
-		allMessages.forEach(msg -> {
-			var a = msg.message;
-			var b = msg.messageId;
-		});
 		return "index";
 	}
 	
