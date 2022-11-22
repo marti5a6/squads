@@ -62,17 +62,13 @@
 			
 			<!--  Debug Text -->
 			<div id="debug">
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
-				<p>Lorem ipsum dolor sit amet...</p>
+
+				<tr th:each="msg : ${messages}" >
+					<p>
+						<td th:text="${msg.message}"/>
+					</p>
+					
+				</tr>
 			</div>
 		</div>
 		

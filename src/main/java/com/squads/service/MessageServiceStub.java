@@ -13,11 +13,11 @@ public class MessageServiceStub {
 
 		Messages test1 = new Messages("This is a test MEssage");
 		Messages test2 = new Messages("This is a test MEssage 2");
-		Messages test3 = new Messages("This is a test MEssage 3");
-		Messages test4 = new Messages("Hey do you have anxiety prime???");
-		Messages test5 = new Messages("huh yeah I do");
-		Messages test6 = new Messages("Amazon*");
-		Messages test7 = new Messages("... Yeah I have that too");
+		Messages test3 = new Messages("TExt MEssages through Service Works");
+		Messages test4 = new Messages("Person 1: Hey do you have anxiety prime???");
+		Messages test5 = new Messages("Person 2: huh yeah I do");
+		Messages test6 = new Messages("Person 1: Amazon*");
+		Messages test7 = new Messages("Person 2: ... Yeah I have that too");
 
 
 		stub.add(test1);

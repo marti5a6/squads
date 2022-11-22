@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.squads.dto.Messages;
@@ -29,12 +30,9 @@ public class SquadsController {
 	}
 	
 	@RequestMapping("/")
-	public String index() {
-		var data = service.fetchAll();
-		data.forEach(msg ->{
-			var test1 = msg.message;
-			var test2 = msg.messageId;
-		});
+	public String index(Model model) {
+		List<Messages> data = service.fetchAll();
+		model.addAttribute("messages", data);
 		return "index";
 	}
 	
