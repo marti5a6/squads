@@ -8,24 +8,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.squads.dto.Messages;
-
-
-
+import com.squads.service.IMessageService;
 
 @Controller
 public class SquadsController {
-	//@Autowired
 	
+	@Autowired
+	private IMessageService service;
+
+
 	List<Messages> allMessages = new ArrayList<Messages>();
 	@RequestMapping("/login")
 	public String login() {
-		Messages test1 = new Messages("This is a test MEssage");
-		Messages test2 = new Messages("This is a test MEssage 2");
-		Messages test3 = new Messages("This is a test MEssage 3");
-		allMessages.add(test1);
-		allMessages.add(test2);
-		allMessages.add(test3);
-		
 		return "login";
 	}
 	
@@ -36,6 +30,11 @@ public class SquadsController {
 	
 	@RequestMapping("/")
 	public String index() {
+		var data = service.fetchAll();
+		data.forEach(msg ->{
+			var test1 = msg.message;
+			var test2 = msg.messageId;
+		});
 		return "index";
 	}
 	

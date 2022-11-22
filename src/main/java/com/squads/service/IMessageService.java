@@ -1,4 +1,4 @@
-package com.squad.service;
+package com.squads.service;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ public interface IMessageService {
 	public List<Messages>fetchAll();
 	
 	public Messages save(Messages message);
-	
+
 	public Messages fetch();
 }
