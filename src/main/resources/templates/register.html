@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 	<head>
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,27 +20,41 @@
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 	</head>
 	<body>
+		<!-- Validate Password Confirmation -->
+		<script>
+			function onChange() {
+				const password = document.querySelector('input[name=password]');
+				const confirmPassword = document.querySelector('input[name=confirmPassword]');
+				if (confirmPassword.value === password.value) {
+					confirmPassword.setCustomValidity('');
+				} else {
+					confirmPassword.setCustomValidity('Passwords do not match!');
+				}
+			}
+		</script>
+
+		<!-- Thymeleaf Sign-In Form -->
 		<div class="container" id="loginForm">
-			<form class="form-signin" method="post" action="perform_register">
+			<form class="form-signin" method="post" th:action="@{/perform_register}" th:object="${user}">
 				<div th:if="${param.error}" class="alert alert-danger alert-dismissible fade show" role="alert">
-					<strong>Login failed.</strong> Invalid username or password.
+					<strong>Registration failed.</strong> Username is taken.
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 			
 				<h2 class="form-signin-heading">Registration</h2>
 				
 				<div class="form-floating">
-					<input class="form-control" type="text" id="username" name="username" placeholder="Username" required autofocus>
+					<input th:field="*{username}" class="form-control" type="text" id="username" name="username" placeholder="Username" required autofocus>
 					<label for="username">Username</label>
         		</div>
         		
 				<div class="form-floating">
-					<input  class="form-control" type="password" id="passwordOne" name="password" placeholder="Password" required>
+					<input th:field="*{password}" class="form-control" type="password" id="passwordOne" name="password" placeholder="Password" onChange="onChange()" required>
 					<label for="password">Password</label>
 				</div>
 				
 				<div class="form-floating">
-					<input  class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+					<input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" onChange="onChange()" required>
 					<label for="password">Confirm Password</label>
 				</div>
 				
