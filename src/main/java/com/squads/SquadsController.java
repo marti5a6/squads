@@ -77,7 +77,6 @@ public class SquadsController {
 						System.out.println(username);
 					}
 					// System.out.println("");
-					// Commented out to avoid log overflow.
 				}
 			}
 		}
