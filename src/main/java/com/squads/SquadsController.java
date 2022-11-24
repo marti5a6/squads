@@ -31,7 +31,7 @@ public class SquadsController {
 	// Implement Service Functions
 	public UserService userService;
 	public RoleService roleService;
-	public SquadsController(UserService theUserService, RoleService theRoleService) {
+	public SquadsController(UserService userObjService, RoleService roleObjService) {
 		userService = theUserService;
 		roleService = theRoleService;
 	}
@@ -43,25 +43,25 @@ public class SquadsController {
 	
 	@RequestMapping("/register")
 	public String register(Model model) {
-		User theUser = new User();
-		model.addAttribute("user", theUser);
+		User userObj = new User();
+		model.addAttribute("user", userObj);
 
-		Role theRole = new Role();
-		model.addAttribute("role", theRole);
+		Role roleObj = new Role();
+		model.addAttribute("role", roleObj);
 
 		return "register";
 	}
 
 	@PostMapping("/perform_register")
-	public String performRegister(@ModelAttribute("user") User theUser, @ModelAttribute("role") Role theRole) {
+	public String performRegister(@ModelAttribute("user") User userObj, @ModelAttribute("role") Role roleObj) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		String encodedPassword = passwordEncoder.encode(theUser.getPassword());
-		theUser.setPassword(encodedPassword);
+		String encodedPassword = passwordEncoder.encode(userObj.getPassword());
+		userObj.setPassword(encodedPassword);
 		
-		String query = "SELECT username FROM users WHERE username LIKE '%" + theUser.getUsername() + "%'";
+		String query = "SELECT username FROM users WHERE username LIKE '%" + userObj.getUsername() + "%'";
 		String url = "jdbc:mysql://localhost:3306/login";
 		String columnValue = "";
-		String username = theUser.getUsername();
+		String username = userObj.getUsername();
 
 		try (Connection connection = DriverManager.getConnection(url, "admin", "it4045"); PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 			try (ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -76,20 +76,21 @@ public class SquadsController {
 						System.out.println(columnValue);
 						System.out.println(username);
 					}
-					System.out.println("");
+					// System.out.println("");
+					// Commented out to avoid log overflow.
 				}
 			}
 		}
 		catch (SQLException e) {
-			return "error?database";
+			throw "[ERROR]\t"+((SQLException)e).getErrorCode();
 		}
 
 		if (columnValue.equals(username)) {
 			return "redirect:/register?error";
 		}
 		else {
-			userService.save(theUser);
-			roleService.save(theRole);
+			userService.save(userObj);
+			roleService.save(roleObj);
 			return "redirect:/success";
 		}
 	}
