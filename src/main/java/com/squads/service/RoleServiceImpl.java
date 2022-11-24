@@ -26,5 +26,11 @@ public class RoleServiceImpl implements RoleService {
     public void save(Role theRole) {
         roleRepository.save(theRole);
     }
+
+	@Override
+	public void delete(Role theRole) {
+		// TODO Auto-generated method stub
+		
+	}
     
 }
