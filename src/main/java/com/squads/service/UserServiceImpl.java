@@ -26,5 +26,11 @@ public class UserServiceImpl implements UserService {
     public void save(User theUser) {
         userRepository.save(theUser);
     }
+
+	@Override
+	public void delete(User theUser) {
+		// TODO Auto-generated method stub
+		
+	}
     
 }

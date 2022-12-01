@@ -8,4 +8,6 @@ public interface RoleService {
     public List<Role> findAll();
 
     public void save(Role theRole);
+    
+    public void delete(Role theRole);
 }
